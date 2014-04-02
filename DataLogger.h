@@ -21,6 +21,7 @@ public:
     std::ofstream* dumpstream;
     DataLogger();
     ~DataLogger();
+    void addLogger(logFn lf, dumpFn df);
     void logData();
     void dumpNow();
     
