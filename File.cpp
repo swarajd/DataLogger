@@ -1,6 +1,6 @@
 #include "File.h"
 
-File::File(char* fn):filestream(fn, std::ofstream::out | std::ofstream::app) {
+File::File(char* fn):filestream(fn, std::ofstream::out) {
     filename = fn;
 }
 

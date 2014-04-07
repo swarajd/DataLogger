@@ -1,6 +1,6 @@
 #include "DataLogger.h"
 
-DataLogger::DataLogger():dumpstream("dumpfile.txt", std::ofstream::out | std::ofstream::app) {
+DataLogger::DataLogger():dumpstream("dumpfile.txt", std::ofstream::out) {
     
 }
 

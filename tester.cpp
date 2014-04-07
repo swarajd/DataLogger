@@ -9,5 +9,5 @@ int main() {
     
     data_typ d;
     d.d = 6;
-    printf("%f", d.f);
+    printf("%f\n", d.f);
 }
