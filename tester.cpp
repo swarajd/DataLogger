@@ -7,4 +7,7 @@ int main() {
     
     f.writeDouble(35.4);
     
+    data_typ d;
+    d.d = 6;
+    printf("%f", d.f);
 }

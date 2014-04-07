@@ -9,13 +9,13 @@ union data_typ {
     float f;
     double d;
     int i;
-    char* ch;
 };
 
 class File {
 private:
     char* filename;
     data_typ last;
+    char* lastmsg;
 public:
     std::ofstream filestream;
     File(char* fn);
@@ -25,6 +25,7 @@ public:
     void writeInt(int);
     void writeStr(char* ch);
     data_typ getLast();
+    char* getLastMsg();
     char* getName();
 };
 

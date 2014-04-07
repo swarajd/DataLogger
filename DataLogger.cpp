@@ -27,6 +27,6 @@ void DataLogger::dumpNow() {
         dumpstream << cur.f << std::endl;
         dumpstream << cur.d << std::endl;
         dumpstream << cur.i << std::endl;
-        dumpstream << cur.ch << std::endl;
+        dumpstream << files.at(i)->getLastMsg() << std::endl;
     }
 }

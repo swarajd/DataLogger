@@ -25,11 +25,15 @@ void File::writeInt(int i) {
 
 void File::writeStr(char* ch) {
     filestream << ch << std::endl;
-    last.ch = ch;
+    lastmsg = ch;
 }
 
 data_typ File::getLast(){
     return last;
+}
+
+char* File::getLastMsg() {
+    return lastmsg;
 }
 
 char* File::getName() {
