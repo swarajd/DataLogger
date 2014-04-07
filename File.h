@@ -5,18 +5,27 @@
 #include <cstdio>
 #include <cstdlib>
 
-template<class T>
+union data_typ {
+    float f;
+    double d;
+    int i;
+    char* ch;
+};
+
 class File {
 private:
     char* filename;
-    std::ofstream filestream;
-    T last;
+    data_typ last;
 public:
+    std::ofstream filestream;
     File(char* fn);
     ~File();
-    void operator<<(T data);
-    void write(T data);
-    void msg(char* ch);
+    void writeFloat(float);
+    void writeDouble(double);
+    void writeInt(int);
+    void writeStr(char* ch);
+    data_typ getLast();
+    char* getName();
 };
 
 #endif

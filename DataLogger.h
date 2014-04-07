@@ -10,21 +10,20 @@
 #include "File.h"
 
 class DataLogger {
-private:
-    typedef void* inst;
-    typedef void(*logFn)(inst);
-    typedef void(*dumpFn)(std::ofstream*, inst);
-    std::vector<inst>   instances;
-    std::vector<logFn>  logFunctions;
-    std::vector<dumpFn> dumpFunctions;
 public:
-    std::ofstream* dumpstream;
+    //should be private but compiler is crying
+    typedef void* instType;
+    typedef void(*logFn)(File*, instType);  
+    std::vector<File*>     files;
+    std::vector<instType> instances;
+    std::vector<logFn>    loggers;
+    
+    std::ofstream dumpstream;
     DataLogger();
     ~DataLogger();
-    void addLogger(logFn lf, dumpFn df);
+    void addLogger(File*, instType, logFn);
     void logData();
     void dumpNow();
-    
 };
 
 #endif

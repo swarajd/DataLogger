@@ -1,32 +1,37 @@
 #include "File.h"
 
-template<class T>
-File<T>::File(char* fn):filestream(fn, std::ofstream::out | std::ofstream::app) {
+File::File(char* fn):filestream(fn, std::ofstream::out | std::ofstream::app) {
     filename = fn;
-    last = NULL;
 }
 
-template<class T>
-File<T>::~File() {
-    filestream.close();
+File::~File() {
+    
 }
 
-template<class T>
-void File<T>::operator<<(T data) {
-    last = data;
-    filestream << data << std::endl;
-    filestream.flush();
+void File::writeFloat(float f) {
+    filestream << f << std::endl;
+    last.f = f;
 }
 
-template<class T>
-void File<T>::write(T data) {
-    last = data;
-    filestream << data << std::endl;
-    filestream.flush();
+void File::writeDouble(double d) {
+    filestream << d << std::endl;
+    last.d = d;
 }
 
-template<class T>
-void File<T>::msg(char* data) {
-    filestream << data << std::endl;
-    filestream.flush();
+void File::writeInt(int i) {
+    filestream << i << std::endl;
+    last.i = i;
+}
+
+void File::writeStr(char* ch) {
+    filestream << ch << std::endl;
+    last.ch = ch;
+}
+
+data_typ File::getLast(){
+    return last;
+}
+
+char* File::getName() {
+    return filename;
 }

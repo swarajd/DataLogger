@@ -1,11 +1,10 @@
 #include "File.h"
-#include "File.cpp"
 
 int main() {  
 
     char* fname = "testfile.txt";
-    File<double> f(fname);
+    File f(fname);
     
-    f << 35.4;
+    f.writeDouble(35.4);
     
 }
