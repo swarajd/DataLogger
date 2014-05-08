@@ -8,22 +8,22 @@ File::~File() {
     
 }
 
-void File::writeFloat(float f) {
+void File::write(float f) {
     filestream << f << std::endl;
     last.f = f;
 }
 
-void File::writeDouble(double d) {
+void File::write(double d) {
     filestream << d << std::endl;
     last.d = d;
 }
 
-void File::writeInt(int i) {
+void File::write(int i) {
     filestream << i << std::endl;
     last.i = i;
 }
 
-void File::writeStr(char* ch) {
+void File::write(char* ch) {
     filestream << ch << std::endl;
     lastmsg = ch;
 }

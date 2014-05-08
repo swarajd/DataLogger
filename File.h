@@ -20,10 +20,10 @@ public:
     std::ofstream filestream;
     File(char* fn);
     ~File();
-    void writeFloat(float);
-    void writeDouble(double);
-    void writeInt(int);
-    void writeStr(char* ch);
+    void write(float);
+    void write(double);
+    void write(int);
+    void write(char* ch);
     data_typ getLast();
     char* getLastMsg();
     char* getName();
